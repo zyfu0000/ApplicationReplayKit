@@ -1,0 +1,9 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Aspects" "${PODS_ROOT}/Headers/Public/JGMethodSwizzler" "${PODS_ROOT}/Headers/Public/KVOController" "${PODS_ROOT}/Headers/Public/RSSwizzle" "${PODS_ROOT}/Headers/Public/YYDispatchQueuePool" "${PODS_ROOT}/Headers/Public/libextobjc"
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Aspects" "${PODS_CONFIGURATION_BUILD_DIR}/JGMethodSwizzler" "${PODS_CONFIGURATION_BUILD_DIR}/KVOController" "${PODS_CONFIGURATION_BUILD_DIR}/RSSwizzle" "${PODS_CONFIGURATION_BUILD_DIR}/YYDispatchQueuePool" "${PODS_CONFIGURATION_BUILD_DIR}/libextobjc"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/Aspects" -isystem "${PODS_ROOT}/Headers/Public/JGMethodSwizzler" -isystem "${PODS_ROOT}/Headers/Public/KVOController" -isystem "${PODS_ROOT}/Headers/Public/RSSwizzle" -isystem "${PODS_ROOT}/Headers/Public/YYDispatchQueuePool" -isystem "${PODS_ROOT}/Headers/Public/libextobjc"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Aspects" -l"JGMethodSwizzler" -l"KVOController" -l"RSSwizzle" -l"YYDispatchQueuePool" -l"libextobjc" -framework "Foundation" -framework "UIKit"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
+PODS_ROOT = ${SRCROOT}/Pods
