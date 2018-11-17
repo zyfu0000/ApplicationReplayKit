@@ -14,6 +14,25 @@
 		720784BD21983B8F00B6EFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720784BC21983B8F00B6EFA7 /* Assets.xcassets */; };
 		720784C021983B8F00B6EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720784BE21983B8F00B6EFA7 /* LaunchScreen.storyboard */; };
 		720784C321983B8F00B6EFA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 720784C221983B8F00B6EFA7 /* main.m */; };
+		729A3B9A219FF7C4004EAD92 /* UIApplication+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */; };
+		729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729A3C6821A058EA004EAD92 /* IOKit.framework */; };
+		729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */; };
+		729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB221A05913004EAD92 /* UIView-Debugging.m */; };
+		729A3CDB21A05917004EAD92 /* IOHIDEvent+KIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB321A05913004EAD92 /* IOHIDEvent+KIF.m */; };
+		729A3CDD21A05917004EAD92 /* UIScrollView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB521A05913004EAD92 /* UIScrollView-KIFAdditions.m */; };
+		729A3CDE21A05917004EAD92 /* UIWindow-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB721A05913004EAD92 /* UIWindow-KIFAdditions.m */; };
+		729A3CDF21A05917004EAD92 /* NSFileManager-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB921A05913004EAD92 /* NSFileManager-KIFAdditions.m */; };
+		729A3CE021A05917004EAD92 /* UIView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CBB21A05913004EAD92 /* UIView-KIFAdditions.m */; };
+		729A3CE121A05917004EAD92 /* NSString+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CBC21A05913004EAD92 /* NSString+KIFAdditions.m */; };
+		729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CBE21A05914004EAD92 /* UITableView-KIFAdditions.m */; };
+		729A3CE321A05917004EAD92 /* UIEvent+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CC321A05914004EAD92 /* UIEvent+KIFAdditions.m */; };
+		729A3CE421A05917004EAD92 /* UITouch-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CC721A05914004EAD92 /* UITouch-KIFAdditions.m */; };
+		729A3CE521A05917004EAD92 /* CALayer-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CC921A05915004EAD92 /* CALayer-KIFAdditions.m */; };
+		729A3CE621A05917004EAD92 /* UIApplication-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CCA21A05915004EAD92 /* UIApplication-KIFAdditions.m */; };
+		729A3CE721A05917004EAD92 /* NSException-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CCC21A05915004EAD92 /* NSException-KIFAdditions.m */; };
+		729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CCD21A05915004EAD92 /* UIScreen+KIFAdditions.m */; };
+		729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */; };
+		729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +46,46 @@
 		720784BF21983B8F00B6EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720784C121983B8F00B6EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720784C221983B8F00B6EFA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		729A3B98219FF7C4004EAD92 /* UIApplication+Touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Touch.h"; sourceTree = "<group>"; };
+		729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Touch.m"; sourceTree = "<group>"; };
+		729A3C6821A058EA004EAD92 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ApplicationReplayKit/IOKit.framework; sourceTree = "<group>"; };
+		729A3C6B21A058F8004EAD92 /* PTFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFakeTouch.h; sourceTree = "<group>"; };
+		729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFakeMetaTouch.m; sourceTree = "<group>"; };
+		729A3C6D21A058F8004EAD92 /* FixCategoryBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixCategoryBug.h; sourceTree = "<group>"; };
+		729A3C6E21A058F8004EAD92 /* PTFakeMetaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFakeMetaTouch.h; sourceTree = "<group>"; };
+		729A3CB121A05912004EAD92 /* UIScreen+KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CB221A05913004EAD92 /* UIView-Debugging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-Debugging.m"; sourceTree = "<group>"; };
+		729A3CB321A05913004EAD92 /* IOHIDEvent+KIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IOHIDEvent+KIF.m"; sourceTree = "<group>"; };
+		729A3CB521A05913004EAD92 /* UIScrollView-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CB621A05913004EAD92 /* UIView-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CB721A05913004EAD92 /* UIWindow-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CB821A05913004EAD92 /* CGGeometry-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CB921A05913004EAD92 /* NSFileManager-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CBA21A05913004EAD92 /* LoadableCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadableCategory.h; sourceTree = "<group>"; };
+		729A3CBB21A05913004EAD92 /* UIView-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CBC21A05913004EAD92 /* NSString+KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CBD21A05913004EAD92 /* NSString+KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CBE21A05914004EAD92 /* UITableView-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CBF21A05914004EAD92 /* NSPredicate+KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPredicate+KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC021A05914004EAD92 /* UITouch-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITouch-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC121A05914004EAD92 /* IOHIDEvent+KIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IOHIDEvent+KIF.h"; sourceTree = "<group>"; };
+		729A3CC321A05914004EAD92 /* UIEvent+KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIEvent+KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CC421A05914004EAD92 /* UIScrollView-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC521A05914004EAD92 /* UIEvent+KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIEvent+KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC621A05914004EAD92 /* CALayer-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC721A05914004EAD92 /* UITouch-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITouch-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CC821A05915004EAD92 /* UIWindow-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CC921A05915004EAD92 /* CALayer-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CCA21A05915004EAD92 /* UIApplication-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CCB21A05915004EAD92 /* NSException-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSException-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CCC21A05915004EAD92 /* NSException-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSException-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CCD21A05915004EAD92 /* UIScreen+KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CCE21A05915004EAD92 /* UITableView-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CCF21A05915004EAD92 /* UIView-Debugging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView-Debugging.h"; sourceTree = "<group>"; };
+		729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPredicate+KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CD221A05916004EAD92 /* UIApplication-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CD521A05916004EAD92 /* NSFileManager-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-KIFAdditions.h"; sourceTree = "<group>"; };
+		729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry-KIFAdditions.m"; sourceTree = "<group>"; };
 		81DB1B0BD8C35953747A583D /* Pods-ApplicationReplayKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.release.xcconfig"; sourceTree = "<group>"; };
 		C48611408F07ED87E790D465 /* libPods-ApplicationReplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApplicationReplayKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C4B8F6BC67D319D76B2235 /* Pods-ApplicationReplayKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -38,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C6DC4C842FBDE4DFC9369DD /* libPods-ApplicationReplayKit.a in Frameworks */,
+				729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +134,7 @@
 		720784B221983B8C00B6EFA7 /* ApplicationReplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				729A3C6A21A058F8004EAD92 /* PTFakeTouch */,
 				720784B321983B8C00B6EFA7 /* AppDelegate.h */,
 				720784B421983B8C00B6EFA7 /* AppDelegate.m */,
 				720784B621983B8C00B6EFA7 /* ViewController.h */,
@@ -83,13 +144,68 @@
 				720784BE21983B8F00B6EFA7 /* LaunchScreen.storyboard */,
 				720784C121983B8F00B6EFA7 /* Info.plist */,
 				720784C221983B8F00B6EFA7 /* main.m */,
+				729A3B98219FF7C4004EAD92 /* UIApplication+Touch.h */,
+				729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */,
 			);
 			path = ApplicationReplayKit;
+			sourceTree = "<group>";
+		};
+		729A3C6A21A058F8004EAD92 /* PTFakeTouch */ = {
+			isa = PBXGroup;
+			children = (
+				729A3C6B21A058F8004EAD92 /* PTFakeTouch.h */,
+				729A3C6E21A058F8004EAD92 /* PTFakeMetaTouch.h */,
+				729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */,
+				729A3C6D21A058F8004EAD92 /* FixCategoryBug.h */,
+				729A3C7021A058F8004EAD92 /* addition */,
+			);
+			path = PTFakeTouch;
+			sourceTree = "<group>";
+		};
+		729A3C7021A058F8004EAD92 /* addition */ = {
+			isa = PBXGroup;
+			children = (
+				729A3CC621A05914004EAD92 /* CALayer-KIFAdditions.h */,
+				729A3CC921A05915004EAD92 /* CALayer-KIFAdditions.m */,
+				729A3CB821A05913004EAD92 /* CGGeometry-KIFAdditions.h */,
+				729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */,
+				729A3CC121A05914004EAD92 /* IOHIDEvent+KIF.h */,
+				729A3CB321A05913004EAD92 /* IOHIDEvent+KIF.m */,
+				729A3CBA21A05913004EAD92 /* LoadableCategory.h */,
+				729A3CCB21A05915004EAD92 /* NSException-KIFAdditions.h */,
+				729A3CCC21A05915004EAD92 /* NSException-KIFAdditions.m */,
+				729A3CD521A05916004EAD92 /* NSFileManager-KIFAdditions.h */,
+				729A3CB921A05913004EAD92 /* NSFileManager-KIFAdditions.m */,
+				729A3CBF21A05914004EAD92 /* NSPredicate+KIFAdditions.h */,
+				729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */,
+				729A3CBD21A05913004EAD92 /* NSString+KIFAdditions.h */,
+				729A3CBC21A05913004EAD92 /* NSString+KIFAdditions.m */,
+				729A3CD221A05916004EAD92 /* UIApplication-KIFAdditions.h */,
+				729A3CCA21A05915004EAD92 /* UIApplication-KIFAdditions.m */,
+				729A3CC521A05914004EAD92 /* UIEvent+KIFAdditions.h */,
+				729A3CC321A05914004EAD92 /* UIEvent+KIFAdditions.m */,
+				729A3CB121A05912004EAD92 /* UIScreen+KIFAdditions.h */,
+				729A3CCD21A05915004EAD92 /* UIScreen+KIFAdditions.m */,
+				729A3CC421A05914004EAD92 /* UIScrollView-KIFAdditions.h */,
+				729A3CB521A05913004EAD92 /* UIScrollView-KIFAdditions.m */,
+				729A3CCE21A05915004EAD92 /* UITableView-KIFAdditions.h */,
+				729A3CBE21A05914004EAD92 /* UITableView-KIFAdditions.m */,
+				729A3CC021A05914004EAD92 /* UITouch-KIFAdditions.h */,
+				729A3CC721A05914004EAD92 /* UITouch-KIFAdditions.m */,
+				729A3CCF21A05915004EAD92 /* UIView-Debugging.h */,
+				729A3CB221A05913004EAD92 /* UIView-Debugging.m */,
+				729A3CB621A05913004EAD92 /* UIView-KIFAdditions.h */,
+				729A3CBB21A05913004EAD92 /* UIView-KIFAdditions.m */,
+				729A3CC821A05915004EAD92 /* UIWindow-KIFAdditions.h */,
+				729A3CB721A05913004EAD92 /* UIWindow-KIFAdditions.m */,
+			);
+			path = addition;
 			sourceTree = "<group>";
 		};
 		D8004D4DE38B49F3872B9B23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				729A3C6821A058EA004EAD92 /* IOKit.framework */,
 				C48611408F07ED87E790D465 /* libPods-ApplicationReplayKit.a */,
 			);
 			name = Frameworks;
@@ -167,15 +283,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ApplicationReplayKit-checkManifestLockResult.txt",
 			);
@@ -191,9 +303,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729A3CE521A05917004EAD92 /* CALayer-KIFAdditions.m in Sources */,
+				729A3CE621A05917004EAD92 /* UIApplication-KIFAdditions.m in Sources */,
+				729A3CE721A05917004EAD92 /* NSException-KIFAdditions.m in Sources */,
+				729A3CDF21A05917004EAD92 /* NSFileManager-KIFAdditions.m in Sources */,
+				729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */,
+				729A3CE021A05917004EAD92 /* UIView-KIFAdditions.m in Sources */,
+				729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */,
+				729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */,
+				729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */,
+				729A3B9A219FF7C4004EAD92 /* UIApplication+Touch.m in Sources */,
+				729A3CE321A05917004EAD92 /* UIEvent+KIFAdditions.m in Sources */,
+				729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */,
 				720784B821983B8C00B6EFA7 /* ViewController.m in Sources */,
+				729A3CE421A05917004EAD92 /* UITouch-KIFAdditions.m in Sources */,
+				729A3CE121A05917004EAD92 /* NSString+KIFAdditions.m in Sources */,
+				729A3CDD21A05917004EAD92 /* UIScrollView-KIFAdditions.m in Sources */,
+				729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */,
 				720784C321983B8F00B6EFA7 /* main.m in Sources */,
 				720784B521983B8C00B6EFA7 /* AppDelegate.m in Sources */,
+				729A3CDB21A05917004EAD92 /* IOHIDEvent+KIF.m in Sources */,
+				729A3CDE21A05917004EAD92 /* UIWindow-KIFAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +466,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4CBDCFQ88;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ApplicationReplayKit",
+				);
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +489,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4CBDCFQ88;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/ApplicationReplayKit",
+				);
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
