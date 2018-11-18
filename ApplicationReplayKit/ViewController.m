@@ -7,14 +7,24 @@
 //
 
 #import "ViewController.h"
-#import <JGMethodSwizzler.h>
 #import "PTFakeTouch.h"
+#import <Aspects.h>
+#import <extobjc.h>
 
-@interface ViewController () // <UITableViewDelegate, UITableViewDataSource>
+@interface ARKTouch: NSObject
+@property (nonatomic, assign) CGPoint pointInWindow;
+@property (nonatomic, assign) NSTimeInterval timeStamp;
+@property (nonatomic, assign) UITouchPhase phase;
+@end
+@implementation ARKTouch
+@end
 
-@property (nonatomic, weak) UIButton *button1;
 
-@property (nonatomic, strong) NSMutableArray<UIEvent *> *events;
+@interface ViewController ()  <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray<ARKTouch *> *touches;
 
 @property (nonatomic, assign) BOOL endRecord;
 
@@ -26,46 +36,69 @@
 {
     [super viewDidLoad];
     
-    self.events = [NSMutableArray array];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gg"];
     
-//    UIApplication *application = [UIApplication sharedApplication];
-//
-//    __weak ViewController *weakThis = self;
-//    [application
-//     swizzleMethod:@selector(sendEvent:)
-//     withReplacement:JGMethodReplacementProviderBlock {
-//         return JGMethodReplacement(void, UIApplication *, UIEvent *event) {
-//             __strong __typeof(weakThis) strongThis = weakThis;
-//
-//             if (!strongThis.endRecord) {
-//                 NSLog(@"event: %@", event);
-//                 [strongThis.events addObject:event];
-//             }
-//             else {
-//                 NSLog(@"event: %@", event);
-//             }
-//
-//            JGOriginalImplementation(void, event);
-//         };
-//     }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Replay" style:UIBarButtonItemStylePlain target:self action:@selector(replayTouch)];
+    self.navigationItem.rightBarButtonItem = item;
+    
+    self.touches = [NSMutableArray array];
+    UIApplication *application = [UIApplication sharedApplication];
+    @weakify(self);
+    [application
+     aspect_hookSelector:@selector(sendEvent:)
+     withOptions:AspectPositionBefore
+     usingBlock:^(id<AspectInfo> info, UIEvent *event) {
+         @strongify(self);
+         
+         if (!self.endRecord) {
+             NSLog(@"event: %@", event);
+             
+             UITouch *touch = event.allTouches.anyObject;
+             ARKTouch *_touch = [ARKTouch new];
+             _touch.pointInWindow = [touch locationInView:touch.window];
+             _touch.timeStamp = touch.timestamp;
+             _touch.phase = touch.phase;
+             
+             [self.touches addObject:_touch];
+         }
+     }
+     error:nil];
 }
 
-- (IBAction)button1Tapped:(id)sender
+- (void)replayTouch
 {
-    NSLog(@"%@", @"button1 tapped");
-    
-    self.endRecord = YES;
-}
-
-- (IBAction)button2Tapped:(id)sender
-{
-//    for (UIEvent *event in self.events) {
-//        [[UIApplication sharedApplication] sendEvent:event];
-//    }
-    
     NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
-    [PTFakeMetaTouch fakeTouchId:pointId AtPoint:CGPointMake(154.66665649414062,284.66665649414062) withTouchPhase:UITouchPhaseBegan];
-    [PTFakeMetaTouch fakeTouchId:pointId AtPoint:CGPointMake(154.66665649414062,284.66665649414062) withTouchPhase:UITouchPhaseEnded];
+    for (ARKTouch *touch in self.touches) {
+        [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase];
+    }
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
+                 cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gg"
+                                                            forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return 50;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    self.endRecord = YES;
+    
+    [self performSegueWithIdentifier:@"showSecondVC" sender:self];
 }
 
 @end

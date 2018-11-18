@@ -14,7 +14,6 @@
 		720784BD21983B8F00B6EFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720784BC21983B8F00B6EFA7 /* Assets.xcassets */; };
 		720784C021983B8F00B6EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720784BE21983B8F00B6EFA7 /* LaunchScreen.storyboard */; };
 		720784C321983B8F00B6EFA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 720784C221983B8F00B6EFA7 /* main.m */; };
-		729A3B9A219FF7C4004EAD92 /* UIApplication+Touch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */; };
 		729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729A3C6821A058EA004EAD92 /* IOKit.framework */; };
 		729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */; };
 		729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB221A05913004EAD92 /* UIView-Debugging.m */; };
@@ -33,6 +32,7 @@
 		729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CCD21A05915004EAD92 /* UIScreen+KIFAdditions.m */; };
 		729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */; };
 		729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */; };
+		729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CEF21A14839004EAD92 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,6 @@
 		720784BF21983B8F00B6EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720784C121983B8F00B6EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720784C221983B8F00B6EFA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		729A3B98219FF7C4004EAD92 /* UIApplication+Touch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Touch.h"; sourceTree = "<group>"; };
-		729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Touch.m"; sourceTree = "<group>"; };
 		729A3C6821A058EA004EAD92 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ApplicationReplayKit/IOKit.framework; sourceTree = "<group>"; };
 		729A3C6B21A058F8004EAD92 /* PTFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFakeTouch.h; sourceTree = "<group>"; };
 		729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFakeMetaTouch.m; sourceTree = "<group>"; };
@@ -86,6 +84,9 @@
 		729A3CD221A05916004EAD92 /* UIApplication-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication-KIFAdditions.h"; sourceTree = "<group>"; };
 		729A3CD521A05916004EAD92 /* NSFileManager-KIFAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager-KIFAdditions.h"; sourceTree = "<group>"; };
 		729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CGGeometry-KIFAdditions.m"; sourceTree = "<group>"; };
+		729A3CED21A14387004EAD92 /* ApplicationReplayKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationReplayKit.pch; sourceTree = "<group>"; };
+		729A3CEE21A14839004EAD92 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		729A3CEF21A14839004EAD92 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		81DB1B0BD8C35953747A583D /* Pods-ApplicationReplayKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.release.xcconfig"; sourceTree = "<group>"; };
 		C48611408F07ED87E790D465 /* libPods-ApplicationReplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApplicationReplayKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C4B8F6BC67D319D76B2235 /* Pods-ApplicationReplayKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,8 +145,9 @@
 				720784BE21983B8F00B6EFA7 /* LaunchScreen.storyboard */,
 				720784C121983B8F00B6EFA7 /* Info.plist */,
 				720784C221983B8F00B6EFA7 /* main.m */,
-				729A3B98219FF7C4004EAD92 /* UIApplication+Touch.h */,
-				729A3B99219FF7C4004EAD92 /* UIApplication+Touch.m */,
+				729A3CED21A14387004EAD92 /* ApplicationReplayKit.pch */,
+				729A3CEE21A14839004EAD92 /* SecondViewController.h */,
+				729A3CEF21A14839004EAD92 /* SecondViewController.m */,
 			);
 			path = ApplicationReplayKit;
 			sourceTree = "<group>";
@@ -306,13 +308,13 @@
 				729A3CE521A05917004EAD92 /* CALayer-KIFAdditions.m in Sources */,
 				729A3CE621A05917004EAD92 /* UIApplication-KIFAdditions.m in Sources */,
 				729A3CE721A05917004EAD92 /* NSException-KIFAdditions.m in Sources */,
+				729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */,
 				729A3CDF21A05917004EAD92 /* NSFileManager-KIFAdditions.m in Sources */,
 				729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */,
 				729A3CE021A05917004EAD92 /* UIView-KIFAdditions.m in Sources */,
 				729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */,
 				729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */,
 				729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */,
-				729A3B9A219FF7C4004EAD92 /* UIApplication+Touch.m in Sources */,
 				729A3CE321A05917004EAD92 /* UIEvent+KIFAdditions.m in Sources */,
 				729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */,
 				720784B821983B8C00B6EFA7 /* ViewController.m in Sources */,
@@ -471,6 +473,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ApplicationReplayKit",
 				);
+				GCC_PREFIX_HEADER = ApplicationReplayKit/ApplicationReplayKit.pch;
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,6 +497,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/ApplicationReplayKit",
 				);
+				GCC_PREFIX_HEADER = ApplicationReplayKit/ApplicationReplayKit.pch;
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
