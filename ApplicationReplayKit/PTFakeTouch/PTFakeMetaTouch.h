@@ -19,6 +19,10 @@
  *
  *  @return pointId 返回操作的序列号
  */
++ (NSInteger)fakeTouchId:(NSInteger)pointId
+                 AtPoint:(CGPoint)point
+          withTouchPhase:(UITouchPhase)phase
+               timestamp:(uint64_t)timestamp;
 + (NSInteger)fakeTouchId:(NSInteger)pointId AtPoint:(CGPoint)point withTouchPhase:(UITouchPhase)phase;
 /**
  *  Get a not used pointId 获取一个没有使用过的触屏序列号

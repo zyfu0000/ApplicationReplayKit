@@ -8,4 +8,4 @@
 
 
 typedef struct __IOHIDEvent * IOHIDEventRef;
-IOHIDEventRef kif_IOHIDEventWithTouches(NSArray *touches) CF_RETURNS_RETAINED;
+IOHIDEventRef kif_IOHIDEventWithTouches(NSArray *touches, NSArray *timestamp) CF_RETURNS_RETAINED;

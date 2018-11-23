@@ -127,8 +127,8 @@ IOHIDEventRef IOHIDEventCreateDigitizerFingerEventWithQuality(CFAllocatorRef all
 
 
 
-IOHIDEventRef kif_IOHIDEventWithTouches(NSArray *touches) {
-    uint64_t abTime = mach_absolute_time();
+IOHIDEventRef kif_IOHIDEventWithTouches(NSArray *touches, NSArray *timestamp) {
+    uint64_t abTime = timestamp ? [timestamp[0] longLongValue] : mach_absolute_time();
     AbsoluteTime timeStamp;
     timeStamp.hi = (UInt32)(abTime >> 32);
     timeStamp.lo = (UInt32)(abTime);

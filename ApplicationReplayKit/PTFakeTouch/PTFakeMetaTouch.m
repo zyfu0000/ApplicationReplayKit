@@ -29,7 +29,16 @@ static UITouch *touch;
 //    }
 //}
 
-+ (NSInteger)fakeTouchId:(NSInteger)pointId AtPoint:(CGPoint)point withTouchPhase:(UITouchPhase)phase{
++ (NSInteger)fakeTouchId:(NSInteger)pointId AtPoint:(CGPoint)point withTouchPhase:(UITouchPhase)phase
+{
+    return [self fakeTouchId:pointId AtPoint:point withTouchPhase:phase timestamp:0];
+}
+
++ (NSInteger)fakeTouchId:(NSInteger)pointId
+                 AtPoint:(CGPoint)point
+          withTouchPhase:(UITouchPhase)phase
+               timestamp:(uint64_t)timestamp
+{
     //DLog(@"4. fakeTouchId , phase : %ld ",(long)phase);
     if (pointId==0) {
         //随机一个没有使用的pointId
@@ -63,7 +72,7 @@ static UITouch *touch;
     
     
     
-    UIEvent *event = [self eventWithTouches:@[touch]];
+    UIEvent *event = [self eventWithTouches:@[touch] timestamp:@[@(timestamp)]];
     [[UIApplication sharedApplication] sendEvent:event];
 //    if ((touch.phase==UITouchPhaseBegan)||touch.phase==UITouchPhaseMoved) {
 //        [touch setPhaseAndUpdateTimestamp:UITouchPhaseStationary];
@@ -72,12 +81,12 @@ static UITouch *touch;
 }
 
 
-+ (UIEvent *)eventWithTouches:(NSArray *)touches
++ (UIEvent *)eventWithTouches:(NSArray *)touches timestamp:(NSArray *)timestamps
 {
     // _touchesEvent is a private selector, interface is exposed in UIApplication(KIFAdditionsPrivate)
     UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
     [event _clearTouches];
-    [event kif_setEventWithTouches:touches];
+    [event kif_setEventWithTouches:touches timestamp:timestamps];
     
     for (UITouch *aTouch in touches) {
         [event _addTouch:aTouch forDelayedDelivery:NO];

@@ -88,9 +88,9 @@
 {
     NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
     for (ARKTouch *touch in self.touches) {
-        dispatch_delay_main_nsec(touch.delayTime, ^{
-            [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase];
-        });
+//        dispatch_delay_main_nsec(touch.delayTime, ^{
+            [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase timestamp:touch.timestamp];
+//        });
     }
 }
 

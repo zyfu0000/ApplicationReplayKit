@@ -52,12 +52,12 @@ typedef struct __GSEvent * GSEventRef;
 
 @implementation UIEvent (KIFAdditions)
 
-- (void)kif_setEventWithTouches:(NSArray *)touches
+- (void)kif_setEventWithTouches:(NSArray *)touches timestamp:(NSArray *)timestamps
 {
     NSOperatingSystemVersion iOS8 = {8, 0, 0};
     if ([NSProcessInfo instancesRespondToSelector:@selector(isOperatingSystemAtLeastVersion:)]
         && [[NSProcessInfo new] isOperatingSystemAtLeastVersion:iOS8]) {
-        [self kif_setIOHIDEventWithTouches:touches];
+        [self kif_setIOHIDEventWithTouches:touches timestamp:timestamps];
     } else {
         [self kif_setGSEventWithTouches:touches];
     }
@@ -84,9 +84,9 @@ typedef struct __GSEvent * GSEventRef;
     [self _setTimestamp:(((UITouch*)touches[0]).timestamp)];
 }
 
-- (void)kif_setIOHIDEventWithTouches:(NSArray *)touches
+- (void)kif_setIOHIDEventWithTouches:(NSArray *)touches timestamp:(NSArray *)timestamps
 {
-    IOHIDEventRef event = kif_IOHIDEventWithTouches(touches);
+    IOHIDEventRef event = kif_IOHIDEventWithTouches(touches, timestamps);
     [self _setHIDEvent:event];
     CFRelease(event);
 }

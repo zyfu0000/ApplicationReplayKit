@@ -784,7 +784,7 @@ NS_INLINE BOOL StringsMatchExceptLineBreaks(NSString *expected, NSString *actual
     UIEvent *event = [[UIApplication sharedApplication] _touchesEvent];
     
     [event _clearTouches];
-    [event kif_setEventWithTouches:touches];
+    [event kif_setEventWithTouches:touches timestamp:nil];
 
     for (UITouch *aTouch in touches) {
         [event _addTouch:aTouch forDelayedDelivery:NO];

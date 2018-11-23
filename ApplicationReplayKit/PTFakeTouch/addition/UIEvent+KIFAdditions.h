@@ -17,5 +17,5 @@ KW_FIX_CATEGORY_BUG_H(UIEvent_KIFAdditions)
 @end
 
 @interface UIEvent (KIFAdditions)
-- (void)kif_setEventWithTouches:(NSArray *)touches;
+- (void)kif_setEventWithTouches:(NSArray *)touches timestamp:(NSArray *)timestamps;
 @end
