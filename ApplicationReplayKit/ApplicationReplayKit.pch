@@ -9,6 +9,6 @@
 #ifndef ApplicationReplayKit_pch
 #define ApplicationReplayKit_pch
 
-
+#import "BMWMacro.h"
 
 #endif /* ApplicationReplayKit_pch */

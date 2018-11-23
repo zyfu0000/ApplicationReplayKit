@@ -33,6 +33,7 @@
 		729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */; };
 		729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */; };
 		729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CEF21A14839004EAD92 /* SecondViewController.m */; };
+		72F10AC321A7904A004116FF /* BMWMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F10AC221A7904A004116FF /* BMWMacro.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		729A3CED21A14387004EAD92 /* ApplicationReplayKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationReplayKit.pch; sourceTree = "<group>"; };
 		729A3CEE21A14839004EAD92 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		729A3CEF21A14839004EAD92 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		72F10AC121A7904A004116FF /* BMWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMWMacro.h; sourceTree = "<group>"; };
+		72F10AC221A7904A004116FF /* BMWMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMWMacro.m; sourceTree = "<group>"; };
 		81DB1B0BD8C35953747A583D /* Pods-ApplicationReplayKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.release.xcconfig"; sourceTree = "<group>"; };
 		C48611408F07ED87E790D465 /* libPods-ApplicationReplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ApplicationReplayKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0C4B8F6BC67D319D76B2235 /* Pods-ApplicationReplayKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 		720784B221983B8C00B6EFA7 /* ApplicationReplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				72F10AC121A7904A004116FF /* BMWMacro.h */,
+				72F10AC221A7904A004116FF /* BMWMacro.m */,
 				729A3C6A21A058F8004EAD92 /* PTFakeTouch */,
 				720784B321983B8C00B6EFA7 /* AppDelegate.h */,
 				720784B421983B8C00B6EFA7 /* AppDelegate.m */,
@@ -314,6 +319,7 @@
 				729A3CE021A05917004EAD92 /* UIView-KIFAdditions.m in Sources */,
 				729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */,
 				729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */,
+				72F10AC321A7904A004116FF /* BMWMacro.m in Sources */,
 				729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */,
 				729A3CE321A05917004EAD92 /* UIEvent+KIFAdditions.m in Sources */,
 				729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */,

@@ -12,19 +12,22 @@
 #import "UIEvent+KIFAdditions.h"
 #import "PTFakeTouch.h"
 
-static NSMutableArray *touchAry;
+//static NSMutableArray *touchAry;
+
+static UITouch *touch;
+
 @implementation PTFakeMetaTouch
 
-+ (void)load{
-    KW_ENABLE_CATEGORY(UITouch_KIFAdditions);
-    KW_ENABLE_CATEGORY(UIEvent_KIFAdditions);
-    touchAry = [[NSMutableArray alloc] init];
-    for (NSInteger i = 0; i<100; i++) {
-        UITouch *touch = [[UITouch alloc] initTouch];
-        [touch setPhaseAndUpdateTimestamp:UITouchPhaseEnded];
-        [touchAry addObject:touch];
-    }
-}
+//+ (void)load{
+//    KW_ENABLE_CATEGORY(UITouch_KIFAdditions);
+//    KW_ENABLE_CATEGORY(UIEvent_KIFAdditions);
+//    touchAry = [[NSMutableArray alloc] init];
+//    for (NSInteger i = 0; i<100; i++) {
+//        UITouch *touch = [[UITouch alloc] initTouch];
+//        [touch setPhaseAndUpdateTimestamp:UITouchPhaseEnded];
+//        [touchAry addObject:touch];
+//    }
+//}
 
 + (NSInteger)fakeTouchId:(NSInteger)pointId AtPoint:(CGPoint)point withTouchPhase:(UITouchPhase)phase{
     //DLog(@"4. fakeTouchId , phase : %ld ",(long)phase);
@@ -37,7 +40,7 @@ static NSMutableArray *touchAry;
         }
     }
     pointId = pointId - 1;
-    UITouch *touch = [touchAry objectAtIndex:pointId];
+//    UITouch *touch = [touchAry objectAtIndex:pointId];
     if (phase == UITouchPhaseBegan) {
         touch = nil;
         touch = [[UITouch alloc] initAtPoint:point inWindow:[UIApplication sharedApplication].keyWindow];
@@ -51,7 +54,7 @@ static NSMutableArray *touchAry;
             touch = [[UITouch alloc] initAtPoint:point inWindow:[[UIApplication sharedApplication].windows lastObject]];
         }
         
-        [touchAry replaceObjectAtIndex:pointId withObject:touch];
+//        [touchAry replaceObjectAtIndex:pointId withObject:touch];
         [touch setLocationInWindow:point];
     }else{
         [touch setLocationInWindow:point];
@@ -60,11 +63,11 @@ static NSMutableArray *touchAry;
     
     
     
-    UIEvent *event = [self eventWithTouches:touchAry];
+    UIEvent *event = [self eventWithTouches:@[touch]];
     [[UIApplication sharedApplication] sendEvent:event];
-    if ((touch.phase==UITouchPhaseBegan)||touch.phase==UITouchPhaseMoved) {
-        [touch setPhaseAndUpdateTimestamp:UITouchPhaseStationary];
-    }
+//    if ((touch.phase==UITouchPhaseBegan)||touch.phase==UITouchPhaseMoved) {
+//        [touch setPhaseAndUpdateTimestamp:UITouchPhaseStationary];
+//    }
     return (pointId+1);
 }
 
@@ -84,15 +87,15 @@ static NSMutableArray *touchAry;
 }
 
 + (NSInteger)getAvailablePointId{
-    NSInteger availablePointId=0;
-    NSMutableArray *availableIds = [[NSMutableArray alloc]init];
-    for (NSInteger i=0; i<touchAry.count-50; i++) {
-        UITouch *touch = [touchAry objectAtIndex:i];
-        if (touch.phase==UITouchPhaseEnded||touch.phase==UITouchPhaseStationary) {
-            [availableIds addObject:@(i+1)];
-        }
-    }
-    availablePointId = availableIds.count==0 ? 0 : [[availableIds objectAtIndex:(arc4random() % availableIds.count)] integerValue];
+    NSInteger availablePointId=100;
+//    NSMutableArray *availableIds = [[NSMutableArray alloc]init];
+//    for (NSInteger i=0; i<touchAry.count-50; i++) {
+//        UITouch *touch = [touchAry objectAtIndex:i];
+//        if (touch.phase==UITouchPhaseEnded||touch.phase==UITouchPhaseStationary) {
+//            [availableIds addObject:@(i+1)];
+//        }
+//    }
+//    availablePointId = availableIds.count==0 ? 0 : [[availableIds objectAtIndex:(arc4random() % availableIds.count)] integerValue];
     return availablePointId;
 }
 @end

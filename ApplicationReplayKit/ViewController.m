@@ -10,10 +10,12 @@
 #import "PTFakeTouch.h"
 #import <Aspects.h>
 #import <extobjc.h>
+#import <mach/mach_time.h>
 
 @interface ARKTouch: NSObject
 @property (nonatomic, assign) CGPoint pointInWindow;
-@property (nonatomic, assign) NSTimeInterval timeStamp;
+@property (nonatomic, assign) uint64_t timestamp;
+@property (nonatomic, assign) uint64_t delayTime;
 @property (nonatomic, assign) UITouchPhase phase;
 @end
 @implementation ARKTouch
@@ -27,6 +29,8 @@
 @property (nonatomic, strong) NSMutableArray<ARKTouch *> *touches;
 
 @property (nonatomic, assign) BOOL endRecord;
+
+@property (nonatomic, assign) NSTimeInterval startTime;
 
 @end
 
@@ -51,15 +55,30 @@
          @strongify(self);
          
          if (!self.endRecord) {
-             NSLog(@"event: %@", event);
-             
              UITouch *touch = event.allTouches.anyObject;
+             
+             NSLog(@"event: %@, touchTime: %@", event, @(touch.timestamp));
+
+             
+             
              ARKTouch *_touch = [ARKTouch new];
              _touch.pointInWindow = [touch locationInView:touch.window];
-             _touch.timeStamp = touch.timestamp;
+             if (touch.phase == UITouchPhaseBegan) {
+                 self.startTime = mach_absolute_time();
+                 _touch.timestamp = self.startTime;
+                 _touch.delayTime = 0;
+             }
+             else {
+                 _touch.timestamp = mach_absolute_time();
+                 _touch.delayTime = _touch.timestamp - self.startTime;
+             }
              _touch.phase = touch.phase;
              
              [self.touches addObject:_touch];
+             
+             if (touch.phase == UITouchPhaseEnded) {
+                 self.endRecord = YES;
+             }
          }
      }
      error:nil];
@@ -69,7 +88,9 @@
 {
     NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
     for (ARKTouch *touch in self.touches) {
-        [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase];
+        dispatch_delay_main_nsec(touch.delayTime, ^{
+            [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase];
+        });
     }
 }
 
