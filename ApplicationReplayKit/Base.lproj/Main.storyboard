@@ -53,9 +53,28 @@
                     <view key="view" contentMode="scaleToFill" id="f1Z-8L-V2B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FRD-k4-P9F">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="he6-4z-OYx" id="uAs-sF-eEg"/>
+                                    <outlet property="delegate" destination="he6-4z-OYx" id="9xX-QS-NIu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uFv-Tp-ZrL" firstAttribute="bottom" secondItem="FRD-k4-P9F" secondAttribute="bottom" id="2Bk-5d-xNB"/>
+                            <constraint firstItem="FRD-k4-P9F" firstAttribute="leading" secondItem="uFv-Tp-ZrL" secondAttribute="leading" id="58K-pB-wDC"/>
+                            <constraint firstItem="uFv-Tp-ZrL" firstAttribute="trailing" secondItem="FRD-k4-P9F" secondAttribute="trailing" id="k98-bb-PN8"/>
+                            <constraint firstItem="FRD-k4-P9F" firstAttribute="top" secondItem="uFv-Tp-ZrL" secondAttribute="top" id="p5f-9m-0mA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="uFv-Tp-ZrL"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="FRD-k4-P9F" id="2sP-vm-9UI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdq-1e-Mt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

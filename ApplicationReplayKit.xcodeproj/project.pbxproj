@@ -14,6 +14,8 @@
 		720784BD21983B8F00B6EFA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 720784BC21983B8F00B6EFA7 /* Assets.xcassets */; };
 		720784C021983B8F00B6EFA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 720784BE21983B8F00B6EFA7 /* LaunchScreen.storyboard */; };
 		720784C321983B8F00B6EFA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 720784C221983B8F00B6EFA7 /* main.m */; };
+		721C7FAE21BCE850000446D0 /* ARKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C7FAD21BCE850000446D0 /* ARKDataSource.m */; };
+		721C7FB121BD1C36000446D0 /* ARKReplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C7FB021BD1C36000446D0 /* ARKReplayManager.m */; };
 		729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729A3C6821A058EA004EAD92 /* IOKit.framework */; };
 		729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */; };
 		729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB221A05913004EAD92 /* UIView-Debugging.m */; };
@@ -47,6 +49,10 @@
 		720784BF21983B8F00B6EFA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		720784C121983B8F00B6EFA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		720784C221983B8F00B6EFA7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		721C7FAC21BCE850000446D0 /* ARKDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKDataSource.h; sourceTree = "<group>"; };
+		721C7FAD21BCE850000446D0 /* ARKDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARKDataSource.m; sourceTree = "<group>"; };
+		721C7FAF21BD1C36000446D0 /* ARKReplayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKReplayManager.h; sourceTree = "<group>"; };
+		721C7FB021BD1C36000446D0 /* ARKReplayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARKReplayManager.m; sourceTree = "<group>"; };
 		729A3C6821A058EA004EAD92 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ApplicationReplayKit/IOKit.framework; sourceTree = "<group>"; };
 		729A3C6B21A058F8004EAD92 /* PTFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFakeTouch.h; sourceTree = "<group>"; };
 		729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFakeMetaTouch.m; sourceTree = "<group>"; };
@@ -153,6 +159,10 @@
 				729A3CED21A14387004EAD92 /* ApplicationReplayKit.pch */,
 				729A3CEE21A14839004EAD92 /* SecondViewController.h */,
 				729A3CEF21A14839004EAD92 /* SecondViewController.m */,
+				721C7FAC21BCE850000446D0 /* ARKDataSource.h */,
+				721C7FAD21BCE850000446D0 /* ARKDataSource.m */,
+				721C7FAF21BD1C36000446D0 /* ARKReplayManager.h */,
+				721C7FB021BD1C36000446D0 /* ARKReplayManager.m */,
 			);
 			path = ApplicationReplayKit;
 			sourceTree = "<group>";
@@ -313,6 +323,7 @@
 				729A3CE521A05917004EAD92 /* CALayer-KIFAdditions.m in Sources */,
 				729A3CE621A05917004EAD92 /* UIApplication-KIFAdditions.m in Sources */,
 				729A3CE721A05917004EAD92 /* NSException-KIFAdditions.m in Sources */,
+				721C7FB121BD1C36000446D0 /* ARKReplayManager.m in Sources */,
 				729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */,
 				729A3CDF21A05917004EAD92 /* NSFileManager-KIFAdditions.m in Sources */,
 				729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */,
@@ -325,6 +336,7 @@
 				729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */,
 				720784B821983B8C00B6EFA7 /* ViewController.m in Sources */,
 				729A3CE421A05917004EAD92 /* UITouch-KIFAdditions.m in Sources */,
+				721C7FAE21BCE850000446D0 /* ARKDataSource.m in Sources */,
 				729A3CE121A05917004EAD92 /* NSString+KIFAdditions.m in Sources */,
 				729A3CDD21A05917004EAD92 /* UIScrollView-KIFAdditions.m in Sources */,
 				729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */,

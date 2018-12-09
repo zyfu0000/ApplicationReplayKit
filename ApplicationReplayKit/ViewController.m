@@ -11,6 +11,7 @@
 #import <Aspects.h>
 #import <extobjc.h>
 #import <mach/mach_time.h>
+#import "ARKReplayManager.h"
 
 @interface ARKTouch: NSObject
 @property (nonatomic, assign) CGPoint pointInWindow;
@@ -39,6 +40,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [ARKReplayManager instance].isReplaying = NO;
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gg"];
     
@@ -86,12 +89,13 @@
 
 - (void)replayTouch
 {
-    NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
-    for (ARKTouch *touch in self.touches) {
-//        dispatch_delay_main_nsec(touch.delayTime, ^{
-            [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase timestamp:touch.timestamp];
-//        });
-    }
+//    NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
+//    for (ARKTouch *touch in self.touches) {
+//        [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase timestamp:touch.timestamp];
+//    }
+    
+    [ARKReplayManager instance].isReplaying = YES;
+    [self performSegueWithIdentifier:@"showSecondVC" sender:self];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
