@@ -37,4 +37,11 @@
     }
 }
 
+- (void)asyncNumbers:(void (^)(NSArray *))completion
+{
+    if (completion) {
+        completion([self numbers]);
+    }
+}
+
 @end

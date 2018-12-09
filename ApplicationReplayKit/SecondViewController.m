@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "ARKDataSource.h"
+#import <extobjc.h>
 
 @interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -23,10 +24,17 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gg"];
-    
-    self.numbers = [[ARKDataSource instance] numbers];
-    
-    [self.tableView reloadData];
+ 
+//    // 同步重写方法的调用
+//    self.numbers = [[ARKDataSource instance] numbers];
+//    [self.tableView reloadData];
+
+    @weakify(self);
+    [[ARKDataSource instance] asyncNumbers:^(NSArray *numbers) {
+        @strongify(self);
+        self.numbers = [[ARKDataSource instance] numbers];
+        [self.tableView reloadData];
+    }];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView

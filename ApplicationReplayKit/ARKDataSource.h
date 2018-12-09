@@ -14,4 +14,6 @@
 
 - (NSArray *)numbers;
 
+- (void)asyncNumbers:(void (^)(NSArray *))completion;
+
 @end
