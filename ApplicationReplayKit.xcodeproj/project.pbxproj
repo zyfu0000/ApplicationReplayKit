@@ -35,6 +35,7 @@
 		729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD021A05915004EAD92 /* NSPredicate+KIFAdditions.m */; };
 		729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */; };
 		729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CEF21A14839004EAD92 /* SecondViewController.m */; };
+		72ACDB6A21BE0DBB000D5E18 /* IIFishBind.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ACDB6821BE0DBB000D5E18 /* IIFishBind.m */; };
 		72F10AC321A7904A004116FF /* BMWMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F10AC221A7904A004116FF /* BMWMacro.m */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,8 @@
 		729A3CED21A14387004EAD92 /* ApplicationReplayKit.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationReplayKit.pch; sourceTree = "<group>"; };
 		729A3CEE21A14839004EAD92 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		729A3CEF21A14839004EAD92 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		72ACDB6821BE0DBB000D5E18 /* IIFishBind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIFishBind.m; sourceTree = "<group>"; };
+		72ACDB6921BE0DBB000D5E18 /* IIFishBind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIFishBind.h; sourceTree = "<group>"; };
 		72F10AC121A7904A004116FF /* BMWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMWMacro.h; sourceTree = "<group>"; };
 		72F10AC221A7904A004116FF /* BMWMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMWMacro.m; sourceTree = "<group>"; };
 		81DB1B0BD8C35953747A583D /* Pods-ApplicationReplayKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		720784B221983B8C00B6EFA7 /* ApplicationReplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				72ACDB6721BE0D95000D5E18 /* HookBlock */,
 				72F10AC121A7904A004116FF /* BMWMacro.h */,
 				72F10AC221A7904A004116FF /* BMWMacro.m */,
 				729A3C6A21A058F8004EAD92 /* PTFakeTouch */,
@@ -217,6 +221,15 @@
 				729A3CB721A05913004EAD92 /* UIWindow-KIFAdditions.m */,
 			);
 			path = addition;
+			sourceTree = "<group>";
+		};
+		72ACDB6721BE0D95000D5E18 /* HookBlock */ = {
+			isa = PBXGroup;
+			children = (
+				72ACDB6921BE0DBB000D5E18 /* IIFishBind.h */,
+				72ACDB6821BE0DBB000D5E18 /* IIFishBind.m */,
+			);
+			path = HookBlock;
 			sourceTree = "<group>";
 		};
 		D8004D4DE38B49F3872B9B23 /* Frameworks */ = {
@@ -332,6 +345,7 @@
 				729A3CE921A05917004EAD92 /* NSPredicate+KIFAdditions.m in Sources */,
 				72F10AC321A7904A004116FF /* BMWMacro.m in Sources */,
 				729A3CE821A05917004EAD92 /* UIScreen+KIFAdditions.m in Sources */,
+				72ACDB6A21BE0DBB000D5E18 /* IIFishBind.m in Sources */,
 				729A3CE321A05917004EAD92 /* UIEvent+KIFAdditions.m in Sources */,
 				729A3CE221A05917004EAD92 /* UITableView-KIFAdditions.m in Sources */,
 				720784B821983B8C00B6EFA7 /* ViewController.m in Sources */,
