@@ -10,6 +10,7 @@
 #import <libextobjc/extobjc.h>
 #import <JGMethodSwizzler.h>
 #import "ARKDataSource.h"
+#import "BlockHook.h"
 
 @interface ARKReplayManager ()
 
@@ -53,6 +54,11 @@
      }];
     
     return self;
+}
+
+- (void)REPLAY_BLOCK:(id)x
+{
+    
 }
 
 @end

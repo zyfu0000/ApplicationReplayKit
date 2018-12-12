@@ -36,6 +36,8 @@
 		729A3CEB21A05917004EAD92 /* CGGeometry-KIFAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CD621A05916004EAD92 /* CGGeometry-KIFAdditions.m */; };
 		729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CEF21A14839004EAD92 /* SecondViewController.m */; };
 		72ACDB6A21BE0DBB000D5E18 /* IIFishBind.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ACDB6821BE0DBB000D5E18 /* IIFishBind.m */; };
+		72ACDB7421BF5536000D5E18 /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72ACDB7321BF5536000D5E18 /* libffi.a */; };
+		72ACDB7821BF555E000D5E18 /* BlockHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 72ACDB7721BF555E000D5E18 /* BlockHook.m */; };
 		72F10AC321A7904A004116FF /* BMWMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F10AC221A7904A004116FF /* BMWMacro.m */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,9 @@
 		729A3CEF21A14839004EAD92 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		72ACDB6821BE0DBB000D5E18 /* IIFishBind.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIFishBind.m; sourceTree = "<group>"; };
 		72ACDB6921BE0DBB000D5E18 /* IIFishBind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIFishBind.h; sourceTree = "<group>"; };
+		72ACDB7321BF5536000D5E18 /* libffi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libffi.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72ACDB7621BF555E000D5E18 /* BlockHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHook.h; sourceTree = "<group>"; };
+		72ACDB7721BF555E000D5E18 /* BlockHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockHook.m; sourceTree = "<group>"; };
 		72F10AC121A7904A004116FF /* BMWMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMWMacro.h; sourceTree = "<group>"; };
 		72F10AC221A7904A004116FF /* BMWMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMWMacro.m; sourceTree = "<group>"; };
 		81DB1B0BD8C35953747A583D /* Pods-ApplicationReplayKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApplicationReplayKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-ApplicationReplayKit/Pods-ApplicationReplayKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C6DC4C842FBDE4DFC9369DD /* libPods-ApplicationReplayKit.a in Frameworks */,
+				72ACDB7421BF5536000D5E18 /* libffi.a in Frameworks */,
 				729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				72ACDB6721BE0D95000D5E18 /* HookBlock */,
+				72ACDB7521BF555E000D5E18 /* BlockHook */,
 				72F10AC121A7904A004116FF /* BMWMacro.h */,
 				72F10AC221A7904A004116FF /* BMWMacro.m */,
 				729A3C6A21A058F8004EAD92 /* PTFakeTouch */,
@@ -232,11 +239,21 @@
 			path = HookBlock;
 			sourceTree = "<group>";
 		};
+		72ACDB7521BF555E000D5E18 /* BlockHook */ = {
+			isa = PBXGroup;
+			children = (
+				72ACDB7621BF555E000D5E18 /* BlockHook.h */,
+				72ACDB7721BF555E000D5E18 /* BlockHook.m */,
+			);
+			path = BlockHook;
+			sourceTree = "<group>";
+		};
 		D8004D4DE38B49F3872B9B23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				729A3C6821A058EA004EAD92 /* IOKit.framework */,
 				C48611408F07ED87E790D465 /* libPods-ApplicationReplayKit.a */,
+				72ACDB7321BF5536000D5E18 /* libffi.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -357,6 +374,7 @@
 				720784C321983B8F00B6EFA7 /* main.m in Sources */,
 				720784B521983B8C00B6EFA7 /* AppDelegate.m in Sources */,
 				729A3CDB21A05917004EAD92 /* IOHIDEvent+KIF.m in Sources */,
+				72ACDB7821BF555E000D5E18 /* BlockHook.m in Sources */,
 				729A3CDE21A05917004EAD92 /* UIWindow-KIFAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +524,17 @@
 					"$(PROJECT_DIR)/ApplicationReplayKit",
 				);
 				GCC_PREFIX_HEADER = ApplicationReplayKit/ApplicationReplayKit.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Aspects\"",
+					"\"${PODS_ROOT}/Headers/Public/JGMethodSwizzler\"",
+					"\"${PODS_ROOT}/Headers/Public/KVOController\"",
+					"\"${PODS_ROOT}/Headers/Public/RSSwizzle\"",
+					"\"${PODS_ROOT}/Headers/Public/YYDispatchQueuePool\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"$(SRCROOT)/libffi/build_iphoneos-arm64/include\"",
+				);
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -530,6 +559,17 @@
 					"$(PROJECT_DIR)/ApplicationReplayKit",
 				);
 				GCC_PREFIX_HEADER = ApplicationReplayKit/ApplicationReplayKit.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Aspects\"",
+					"\"${PODS_ROOT}/Headers/Public/JGMethodSwizzler\"",
+					"\"${PODS_ROOT}/Headers/Public/KVOController\"",
+					"\"${PODS_ROOT}/Headers/Public/RSSwizzle\"",
+					"\"${PODS_ROOT}/Headers/Public/YYDispatchQueuePool\"",
+					"\"${PODS_ROOT}/Headers/Public/libextobjc\"",
+					"\"$(SRCROOT)/libffi/build_iphoneos-arm64/include\"",
+				);
 				INFOPLIST_FILE = ApplicationReplayKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
