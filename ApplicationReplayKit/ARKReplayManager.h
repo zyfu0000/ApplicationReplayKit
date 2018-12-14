@@ -14,4 +14,11 @@
 
 @property (nonatomic, assign) BOOL isReplaying;
 
+- (id)REPLAY_BLOCK:(id)x;
+
 @end
+
+
+#define BLOCK_CALL_ASSERT(x) ({                 \
+[[ARKReplayManager instance] REPLAY_BLOCK:x]; \
+})

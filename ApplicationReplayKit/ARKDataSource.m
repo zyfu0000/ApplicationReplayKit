@@ -7,6 +7,7 @@
 //
 
 #import "ARKDataSource.h"
+#import "ARKReplayManager.h"
 
 @interface ARKDataSource ()
 
@@ -39,6 +40,8 @@
 
 - (void)asyncNumbers:(void (^)(NSArray *))completion
 {
+//    [[ARKReplayManager instance] REPLAY_BLOCK:completion];
+    
     if (completion) {
         completion([self numbers]);
     }

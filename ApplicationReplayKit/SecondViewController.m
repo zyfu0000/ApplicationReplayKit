@@ -9,6 +9,8 @@
 #import "SecondViewController.h"
 #import "ARKDataSource.h"
 #import <extobjc.h>
+#import "ARKReplayManager.h"
+#import "BlockHook.h"
 
 @interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -30,11 +32,11 @@
 //    [self.tableView reloadData];
 
     @weakify(self);
-    [[ARKDataSource instance] asyncNumbers:^(NSArray *numbers) {
+    [[ARKDataSource instance] asyncNumbers:BLOCK_CALL_ASSERT(^(NSArray *numbers) {
         @strongify(self);
         self.numbers = [[ARKDataSource instance] numbers];
         [self.tableView reloadData];
-    }];
+    })];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView

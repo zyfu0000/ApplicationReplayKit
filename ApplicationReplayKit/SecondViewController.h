@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+#include <stdio.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    
+
+    
+#ifdef __cplusplus
+} // end extern "C"
+#endif
+
 @interface SecondViewController : UIViewController
 
 @end
