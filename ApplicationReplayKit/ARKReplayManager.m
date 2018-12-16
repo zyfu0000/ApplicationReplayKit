@@ -11,12 +11,14 @@
 #import <JGMethodSwizzler.h>
 #import "ARKDataSource.h"
 #import "BlockHook.h"
+#import "IIFishBind.h"
 
 @interface ARKReplayManager ()
 
 @property (nonatomic, copy) NSArray *numbers;
 
 @property (nonatomic, strong) BHToken *token;
+@property (nonatomic, copy) NSArray *parameters;
 
 @end
 
@@ -58,37 +60,31 @@
     return self;
 }
 
-static void ** args = nil;
-static void *arg = nil;
-
 - (id)REPLAY_BLOCK:(id)x
 {
     @weakify(self);
-    if (!self.isReplaying) {
-        self.token = [x block_hookWithMode:BlockHookModeInstead usingBlock:^(BHToken *token, NSArray *numbers) {
-            @strongify(self);
-            
-            if (!self.isReplaying) {
-    //            NSArray *array = (__bridge NSArray *)(*token.args);
-    //            self.numbers = array[0];
-                
-                args = token.args;
-                arg = *token.args;
-                
-                [token invokeOriginalBlock];
-                
-            }
-            else {
-                *(token.args) = args;//(__bridge void*)(@[self.numbers]);
-                [token invokeOriginalBlock];
-            }
-        }];
-    }
-    else {
-        self.token.args = args;
-        *self.token.args = arg;
-        [self.token invokeOriginalBlock];
-    }
+    IIFish *fish1 = [IIFish postBlock:x];
+    IIFish *fish2 =
+    [IIFish
+     observer:self
+     callBack:^(IIFishCallBack *callBack, id deadFish) {
+         @strongify(self);
+         if (!self.isReplaying) {
+             self.parameters = callBack.args;
+             
+             [callBack.originalInvocation invoke];
+         }
+         else {
+             for (NSInteger i = 0; i < self.parameters.count; ++i) {
+                 id value = self.parameters[i];
+                 [callBack.originalInvocation
+                  setArgument:&value
+                  atIndex:i+1];
+             }
+             [callBack.originalInvocation invoke];
+         }
+     }];
+    [IIFishBind bindFishes:@[fish1, fish2]];
     
     return x;
 }

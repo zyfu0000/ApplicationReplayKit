@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *selector;
 @property (nonatomic, strong) NSArray *args;
 @property (nonatomic, assign) id resule;
+@property (nonatomic) NSInvocation *originalInvocation;
 @end
 
 typedef void(^IIFishCallBackBlock) (IIFishCallBack *callBack, id deadFish);

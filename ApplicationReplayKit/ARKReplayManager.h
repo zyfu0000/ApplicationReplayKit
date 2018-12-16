@@ -18,7 +18,6 @@
 
 @end
 
-
 #define BLOCK_CALL_ASSERT(x) ({                 \
 [[ARKReplayManager instance] REPLAY_BLOCK:x]; \
 })

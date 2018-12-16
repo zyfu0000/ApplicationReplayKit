@@ -259,12 +259,12 @@ argBox = @(arg);\
             [invocation getReturnValue:&arg];
             argBox = [[NSString alloc] initWithUTF8String:arg];
         } break;
-        case '@': {
-            __autoreleasing id arg;
-            [invocation getReturnValue:&arg];
-            __weak id weakArg = arg;
-            argBox = ^(){return weakArg;};
-        } break;
+//        case '@': {
+//            __autoreleasing id arg;
+//            [invocation getReturnValue:&arg];
+//            __weak id weakArg = arg;
+//            argBox = ^(){return weakArg;};
+//        } break;
         case '#': {
             Class arg;
             [invocation getReturnValue:&arg];
@@ -327,12 +327,12 @@ argBox = @(arg);\
                 [invocation getArgument:&arg atIndex:i];
                 argBox = [[NSString alloc] initWithUTF8String:arg];
             } break;
-            case '@': {
-                __autoreleasing id arg;
-                [invocation getArgument:&arg atIndex:i];
-                __weak id weakArg = arg;
-                argBox = ^(){return weakArg;};
-            } break;
+//            case '@': {
+//                __autoreleasing id arg;
+//                [invocation getArgument:&arg atIndex:i];
+//                __weak id weakArg = arg;
+//                argBox = ^(){return weakArg;};
+//            } break;
             case '#': {
                 Class arg;
                 [invocation getArgument:&arg atIndex:i];
@@ -377,6 +377,7 @@ static IIFishCallBack* iifish_invocation_getCallback(NSInvocation *invo) {
     }
     
     callBack.resule = iifish_invocation_getReturnValue(invo);
+    callBack.originalInvocation = invo;
     return callBack;
 }
 
@@ -476,7 +477,7 @@ static void iifish_block_setTempGlobalBlock(IIFishBlock block, struct IIFishBloc
 }
 
 static void iifish_block_setTempMallocBlock(IIFishBlock block, IIFishBlock tempBlock) {
-    objc_setAssociatedObject((__bridge id)block, @"IIFish_Block_TempBlock", (__bridge id)tempBlock, OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject((__bridge id)block, @"IIFish_Block_TempBlock", (__bridge id)tempBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 static long long iifish_block_getDisposeFunc(id block) {
@@ -489,9 +490,10 @@ static void iifish_block_setDisposeFunc(id block, long long disposeFuncAdders) {
 
 void iifish_block_disposeFunc(const void * block_Layout) {
     
-    IIFishBlock block = (IIFishBlock)block_Layout;
-    id tempBlock = iifish_block_getTempBlock(block);
-    free((__bridge void *)tempBlock);
+    // TODO: 这里有释放crash
+//    IIFishBlock block = (IIFishBlock)block_Layout;
+//    id tempBlock = iifish_block_getTempBlock(block);
+//    free((__bridge void *)tempBlock);
     
     long long disposeAdders = iifish_block_getDisposeFunc((__bridge id)(block_Layout));
     
@@ -548,7 +550,7 @@ static void iifish_block_forwardInvocation(id self, SEL _cmd, NSInvocation *invo
     }
     
     invo.target = tempBlock;
-    [invo invoke];
+//    [invo invoke];
     
     IIObserverAsset *asseet = iifish_object_getAsset((__bridge id)block);
     __block NSArray *observers;

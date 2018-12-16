@@ -31,10 +31,10 @@
 //    self.numbers = [[ARKDataSource instance] numbers];
 //    [self.tableView reloadData];
 
-    @weakify(self);
+//    @weakify(self);
     [[ARKDataSource instance] asyncNumbers:BLOCK_CALL_ASSERT(^(NSArray *numbers) {
-        @strongify(self);
-        self.numbers = [[ARKDataSource instance] numbers];
+//        @strongify(self);
+        self.numbers = numbers;
         [self.tableView reloadData];
     })];
 }
