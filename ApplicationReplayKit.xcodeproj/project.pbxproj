@@ -16,6 +16,10 @@
 		720784C321983B8F00B6EFA7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 720784C221983B8F00B6EFA7 /* main.m */; };
 		721C7FAE21BCE850000446D0 /* ARKDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C7FAD21BCE850000446D0 /* ARKDataSource.m */; };
 		721C7FB121BD1C36000446D0 /* ARKReplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C7FB021BD1C36000446D0 /* ARKReplayManager.m */; };
+		724D02B921D793E400E48633 /* NSJSONSerialization+CrashFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B121D793E400E48633 /* NSJSONSerialization+CrashFree.m */; };
+		724D02BA21D793E400E48633 /* NSObject+CrashFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B321D793E400E48633 /* NSObject+CrashFree.m */; };
+		724D02BB21D793E400E48633 /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B621D793E400E48633 /* NSObjectSafe.m */; };
+		724D02C021D7941D00E48633 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02BF21D7941D00E48633 /* NSObject+Swizzle.m */; };
 		729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729A3C6821A058EA004EAD92 /* IOKit.framework */; };
 		729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */; };
 		729A3CDA21A05917004EAD92 /* UIView-Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3CB221A05913004EAD92 /* UIView-Debugging.m */; };
@@ -56,6 +60,15 @@
 		721C7FAD21BCE850000446D0 /* ARKDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARKDataSource.m; sourceTree = "<group>"; };
 		721C7FAF21BD1C36000446D0 /* ARKReplayManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARKReplayManager.h; sourceTree = "<group>"; };
 		721C7FB021BD1C36000446D0 /* ARKReplayManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARKReplayManager.m; sourceTree = "<group>"; };
+		724D02AF21D793E400E48633 /* CrashFreeAssert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashFreeAssert.h; sourceTree = "<group>"; };
+		724D02B021D793E400E48633 /* NSJSONSerialization+CrashFree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSJSONSerialization+CrashFree.h"; sourceTree = "<group>"; };
+		724D02B121D793E400E48633 /* NSJSONSerialization+CrashFree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSJSONSerialization+CrashFree.m"; sourceTree = "<group>"; };
+		724D02B221D793E400E48633 /* NSObject+CrashFree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CrashFree.h"; sourceTree = "<group>"; };
+		724D02B321D793E400E48633 /* NSObject+CrashFree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+CrashFree.m"; sourceTree = "<group>"; };
+		724D02B521D793E400E48633 /* NSObjectSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectSafe.h; sourceTree = "<group>"; };
+		724D02B621D793E400E48633 /* NSObjectSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSObjectSafe.m; sourceTree = "<group>"; };
+		724D02BE21D7941D00E48633 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		724D02BF21D7941D00E48633 /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
 		729A3C6821A058EA004EAD92 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ApplicationReplayKit/IOKit.framework; sourceTree = "<group>"; };
 		729A3C6B21A058F8004EAD92 /* PTFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFakeTouch.h; sourceTree = "<group>"; };
 		729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFakeMetaTouch.m; sourceTree = "<group>"; };
@@ -153,6 +166,8 @@
 		720784B221983B8C00B6EFA7 /* ApplicationReplayKit */ = {
 			isa = PBXGroup;
 			children = (
+				724D02BD21D7941D00E48633 /* Swizzle */,
+				724D02AE21D793E400E48633 /* CrashFree */,
 				72ACDB6721BE0D95000D5E18 /* HookBlock */,
 				72ACDB7521BF555E000D5E18 /* BlockHook */,
 				729A3C6A21A058F8004EAD92 /* PTFakeTouch */,
@@ -176,6 +191,37 @@
 				721C7FB021BD1C36000446D0 /* ARKReplayManager.m */,
 			);
 			path = ApplicationReplayKit;
+			sourceTree = "<group>";
+		};
+		724D02AE21D793E400E48633 /* CrashFree */ = {
+			isa = PBXGroup;
+			children = (
+				724D02AF21D793E400E48633 /* CrashFreeAssert.h */,
+				724D02B021D793E400E48633 /* NSJSONSerialization+CrashFree.h */,
+				724D02B121D793E400E48633 /* NSJSONSerialization+CrashFree.m */,
+				724D02B221D793E400E48633 /* NSObject+CrashFree.h */,
+				724D02B321D793E400E48633 /* NSObject+CrashFree.m */,
+				724D02B421D793E400E48633 /* NSObjectSafe */,
+			);
+			path = CrashFree;
+			sourceTree = "<group>";
+		};
+		724D02B421D793E400E48633 /* NSObjectSafe */ = {
+			isa = PBXGroup;
+			children = (
+				724D02B521D793E400E48633 /* NSObjectSafe.h */,
+				724D02B621D793E400E48633 /* NSObjectSafe.m */,
+			);
+			path = NSObjectSafe;
+			sourceTree = "<group>";
+		};
+		724D02BD21D7941D00E48633 /* Swizzle */ = {
+			isa = PBXGroup;
+			children = (
+				724D02BE21D7941D00E48633 /* NSObject+Swizzle.h */,
+				724D02BF21D7941D00E48633 /* NSObject+Swizzle.m */,
+			);
+			path = Swizzle;
 			sourceTree = "<group>";
 		};
 		729A3C6A21A058F8004EAD92 /* PTFakeTouch */ = {
@@ -351,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				729A3CE521A05917004EAD92 /* CALayer-KIFAdditions.m in Sources */,
+				724D02B921D793E400E48633 /* NSJSONSerialization+CrashFree.m in Sources */,
 				729A3CE621A05917004EAD92 /* UIApplication-KIFAdditions.m in Sources */,
+				724D02BB21D793E400E48633 /* NSObjectSafe.m in Sources */,
 				729A3CE721A05917004EAD92 /* NSException-KIFAdditions.m in Sources */,
 				721C7FB121BD1C36000446D0 /* ARKReplayManager.m in Sources */,
 				729A3CF021A14839004EAD92 /* SecondViewController.m in Sources */,
@@ -372,8 +420,10 @@
 				729A3CDD21A05917004EAD92 /* UIScrollView-KIFAdditions.m in Sources */,
 				729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */,
 				720784C321983B8F00B6EFA7 /* main.m in Sources */,
+				724D02C021D7941D00E48633 /* NSObject+Swizzle.m in Sources */,
 				720784B521983B8C00B6EFA7 /* AppDelegate.m in Sources */,
 				729A3CDB21A05917004EAD92 /* IOHIDEvent+KIF.m in Sources */,
+				724D02BA21D793E400E48633 /* NSObject+CrashFree.m in Sources */,
 				72ACDB7821BF555E000D5E18 /* BlockHook.m in Sources */,
 				729A3CDE21A05917004EAD92 /* UIWindow-KIFAdditions.m in Sources */,
 			);

@@ -145,7 +145,7 @@ static NSInteger g_seq = 0;
         uint64_t time2 = self.touchEvents[lastTouchEventIndex + 1].timestamp;
         
         [self.touchEvents removeObjectsInArray:toDeleteEvents];
-        dispatch_delay_main_nsec((time2 - time1), ^{
+        dispatch_delay_main_nsec((time2 - time1) * 10, ^{
             [self replayEvents];
         });
     }
@@ -167,13 +167,10 @@ static NSInteger g_seq = 0;
              
              ARKReplayTouchEvent *touchEvent = [ARKReplayTouchEvent new];
              touchEvent.pointInWindow = [touch locationInView:touch.window];
-             if (touch.phase == UITouchPhaseBegan) {
-                 touchEvent.timestamp = mach_absolute_time();
-             }
-             else {
-                 touchEvent.timestamp = mach_absolute_time();
-             }
+             touchEvent.timestamp = mach_absolute_time();
              touchEvent.phase = touch.phase;
+             
+             NSLog(@"phase: %@, touchTime: %@", @(touchEvent.phase), @(touchEvent.timestamp));
              
              [self.touchEvents addObject:touchEvent];
              
