@@ -12,9 +12,13 @@
 
 + (instancetype)instance;
 
-@property (nonatomic, assign) BOOL isReplaying;
-
 - (id)REPLAY_BLOCK:(id)x;
+- (void)replayEvents;
+- (void)startRecord;
+- (void)stopRecord;
+
+@property (nonatomic, assign) BOOL isRecording;
+@property (nonatomic, assign) BOOL isReplaying;
 
 @end
 

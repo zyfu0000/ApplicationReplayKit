@@ -7,31 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "PTFakeTouch.h"
-#import <Aspects.h>
-#import <extobjc.h>
-#import <mach/mach_time.h>
 #import "ARKReplayManager.h"
-
-@interface ARKTouch: NSObject
-@property (nonatomic, assign) CGPoint pointInWindow;
-@property (nonatomic, assign) uint64_t timestamp;
-@property (nonatomic, assign) uint64_t delayTime;
-@property (nonatomic, assign) UITouchPhase phase;
-@end
-@implementation ARKTouch
-@end
-
+#import "ARKDataSource.h"
 
 @interface ViewController ()  <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-
-@property (nonatomic, strong) NSMutableArray<ARKTouch *> *touches;
-
-@property (nonatomic, assign) BOOL endRecord;
-
-@property (nonatomic, assign) NSTimeInterval startTime;
+@property (nonatomic, copy) NSArray *numbers;
 
 @end
 
@@ -40,62 +22,53 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    [ARKReplayManager instance].isReplaying = NO;
+    [self updateTitle];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gg"];
     
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Replay" style:UIBarButtonItemStylePlain target:self action:@selector(replayTouch)];
-    self.navigationItem.rightBarButtonItem = item;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Start" style:UIBarButtonItemStylePlain target:self action:@selector(startRecord)];
+    self.navigationItem.leftBarButtonItem = item;
     
-    self.touches = [NSMutableArray array];
-    UIApplication *application = [UIApplication sharedApplication];
-    @weakify(self);
-    [application
-     aspect_hookSelector:@selector(sendEvent:)
-     withOptions:AspectPositionBefore
-     usingBlock:^(id<AspectInfo> info, UIEvent *event) {
-         @strongify(self);
-         
-         if (!self.endRecord) {
-             UITouch *touch = event.allTouches.anyObject;
-             
-             NSLog(@"event: %@, touchTime: %@", event, @(touch.timestamp));
-
-             
-             
-             ARKTouch *_touch = [ARKTouch new];
-             _touch.pointInWindow = [touch locationInView:touch.window];
-             if (touch.phase == UITouchPhaseBegan) {
-                 self.startTime = mach_absolute_time();
-                 _touch.timestamp = self.startTime;
-                 _touch.delayTime = 0;
-             }
-             else {
-                 _touch.timestamp = mach_absolute_time();
-                 _touch.delayTime = _touch.timestamp - self.startTime;
-             }
-             _touch.phase = touch.phase;
-             
-             [self.touches addObject:_touch];
-             
-             if (touch.phase == UITouchPhaseEnded) {
-                 self.endRecord = YES;
-             }
-         }
-     }
-     error:nil];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"Stop" style:UIBarButtonItemStylePlain target:self action:@selector(stopRecord)];
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithTitle:@"Replay" style:UIBarButtonItemStylePlain target:self action:@selector(startReplay)];
+    self.navigationItem.rightBarButtonItems = @[item1, item2];
+    
+    self.numbers = [[ARKDataSource instance] numbers];
+    [self.tableView reloadData];
 }
 
-- (void)replayTouch
+- (void)startRecord
 {
-//    NSInteger pointId = [PTFakeMetaTouch getAvailablePointId];
-//    for (ARKTouch *touch in self.touches) {
-//        [PTFakeMetaTouch fakeTouchId:pointId AtPoint:touch.pointInWindow withTouchPhase:touch.phase timestamp:touch.timestamp];
-//    }
+    [[ARKReplayManager instance] startRecord];
     
-    [ARKReplayManager instance].isReplaying = YES;
-    [self performSegueWithIdentifier:@"showSecondVC" sender:self];
+    [self updateTitle];
+}
+
+- (void)stopRecord
+{
+    [[ARKReplayManager instance] stopRecord];
+    
+    [self updateTitle];
+}
+
+- (void)startReplay
+{
+    [[ARKReplayManager instance] replayEvents];
+    
+    [self updateTitle];
+}
+
+- (void)updateTitle
+{
+    if ([ARKReplayManager instance].isReplaying) {
+        self.title = @"Replaying";
+    }
+    else if ([ARKReplayManager instance].isRecording) {
+        self.title = @"Recording";
+    }
+    else {
+        self.title = @"Record Stopped";
+    }
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView
@@ -103,14 +76,15 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"gg"
                                                             forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    NSNumber *number = self.numbers[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", number];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return 50;
+    return self.numbers.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,7 +95,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    self.endRecord = YES;
     
     [self performSegueWithIdentifier:@"showSecondVC" sender:self];
 }

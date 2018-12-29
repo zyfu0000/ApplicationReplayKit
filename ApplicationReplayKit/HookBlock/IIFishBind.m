@@ -729,7 +729,7 @@ static void IIFishForwardInvocation(id self, SEL _cmd, NSInvocation *anInvocatio
     snprintf(orgSelString, strlen(fakeSelString) + strlen(IIFish_Prefix) + 1, "%s%s",IIFish_Prefix, fakeSelString);
     
     anInvocation.selector = sel_getUid(orgSelString);
-    [anInvocation invoke];
+//    [anInvocation invoke];
     
     IIFishWatchCallBackBlock callback = iifish_object_getCallBack(self);
     if (callback) {

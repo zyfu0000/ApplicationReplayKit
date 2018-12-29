@@ -10,7 +10,6 @@
 #import "ARKDataSource.h"
 #import <extobjc.h>
 #import "ARKReplayManager.h"
-#import "BlockHook.h"
 
 @interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,14 +25,10 @@
     [super viewDidLoad];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gg"];
- 
-//    // 同步重写方法的调用
-//    self.numbers = [[ARKDataSource instance] numbers];
-//    [self.tableView reloadData];
 
-//    @weakify(self);
+    @weakify(self);
     [[ARKDataSource instance] asyncNumbers:BLOCK_CALL_ASSERT(^(NSArray *numbers) {
-//        @strongify(self);
+        @strongify(self);
         self.numbers = numbers;
         [self.tableView reloadData];
     })];
