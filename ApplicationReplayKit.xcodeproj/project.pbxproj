@@ -18,7 +18,7 @@
 		721C7FB121BD1C36000446D0 /* ARKReplayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C7FB021BD1C36000446D0 /* ARKReplayManager.m */; };
 		724D02B921D793E400E48633 /* NSJSONSerialization+CrashFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B121D793E400E48633 /* NSJSONSerialization+CrashFree.m */; };
 		724D02BA21D793E400E48633 /* NSObject+CrashFree.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B321D793E400E48633 /* NSObject+CrashFree.m */; };
-		724D02BB21D793E400E48633 /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B621D793E400E48633 /* NSObjectSafe.m */; };
+		724D02BB21D793E400E48633 /* NSObjectSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02B621D793E400E48633 /* NSObjectSafe.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		724D02C021D7941D00E48633 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 724D02BF21D7941D00E48633 /* NSObject+Swizzle.m */; };
 		729A3C6921A058EA004EAD92 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729A3C6821A058EA004EAD92 /* IOKit.framework */; };
 		729A3C9A21A058F8004EAD92 /* PTFakeMetaTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 729A3C6C21A058F8004EAD92 /* PTFakeMetaTouch.m */; };
