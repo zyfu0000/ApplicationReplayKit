@@ -146,10 +146,26 @@ static NSInteger g_seq = 0;
         uint64_t time2 = self.touchEvents[lastTouchEventIndex + 1].timestamp;
         
         [self.touchEvents removeObjectsInArray:toDeleteEvents];
-        dispatch_delay_main_nsec((time2 - time1) * 10, ^{
+        dispatch_delay_main([self subtractTimes:time2 startTime:time1], ^{
             [self replayEvents];
         });
     }
+}
+
+- (NSTimeInterval)subtractTimes:(uint64_t)endTime startTime:(uint64_t)startTime
+{
+    uint64_t difference = endTime - startTime;
+    static double conversion = 0.0;
+    if(conversion == 0.0) {
+        mach_timebase_info_data_t info;
+        kern_return_t err = mach_timebase_info(&info);
+        
+        //convert the timebase into seconds
+        if(err ==0) {
+            conversion = 1e-9 * (double) info.numer / (double)info.denom;
+        }
+    }
+    return conversion * (double)difference;
 }
 
 - (void)REPLAY_TOUCH
