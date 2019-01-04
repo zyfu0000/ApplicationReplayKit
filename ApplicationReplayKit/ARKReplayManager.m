@@ -134,7 +134,8 @@ static NSInteger g_seq = 0;
                       withTouchPhase:touchEvent.phase
                            timestamp:touchEvent.timestamp];
         [toDeleteEvents addObject:touchEvent];
-        if (touchEvent.phase == UITouchPhaseEnded) {
+        if (touchEvent.phase == UITouchPhaseEnded ||
+            touchEvent.phase == UITouchPhaseCancelled) {
             lastTouchEventIndex = i;
             break;
         }
